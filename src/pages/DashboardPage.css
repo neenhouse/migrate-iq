@@ -1,19 +1,11 @@
 /* ── Dashboard Page ── */
 
-.dash-page .page-header {
-  margin-bottom: 24px;
-}
-
-.dash-page .page-header h1 {
-  margin-bottom: 8px;
-}
-
 /* Stats */
 .dash-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .dash-stat {
@@ -21,39 +13,39 @@
 }
 
 .dash-stat__value {
-  font-size: 1.75rem;
+  font-size: var(--text-3xl);
   font-weight: 800;
 }
 
 .dash-stat__label {
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 4px;
+  margin-top: var(--space-1);
 }
 
 /* Grid */
 .dash-grid {
   display: grid;
   grid-template-columns: 1fr 340px;
-  gap: 20px;
+  gap: var(--space-5);
   align-items: start;
 }
 
 /* Modules */
 .dash-modules h3 {
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 .dash-module-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .dash-module {
-  padding-bottom: 16px;
+  padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--border);
 }
 
@@ -66,11 +58,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 .dash-module__name {
-  font-size: 0.875rem;
+  font-size: var(--text-md);
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -78,11 +70,11 @@
 .dash-module__bar-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 .dash-module__pct {
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
   font-weight: 600;
   color: var(--accent);
   min-width: 36px;
@@ -91,9 +83,9 @@
 
 .dash-module__meta {
   display: flex;
-  gap: 16px;
-  margin-top: 8px;
-  font-size: 0.75rem;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
   color: var(--text-muted);
 }
 
@@ -101,24 +93,24 @@
 .dash-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-5);
 }
 
 .dash-sidebar h3 {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 /* Status rows */
 .dash-status-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 .dash-status-row__header {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
   margin-bottom: 6px;
 }
 
@@ -130,7 +122,7 @@
 /* Velocity */
 .dash-velocity {
   display: flex;
-  gap: 8px;
+  gap: var(--space-2);
   align-items: flex-end;
   height: 120px;
 }
@@ -160,7 +152,7 @@
 }
 
 .dash-velocity__label {
-  font-size: 0.6875rem;
+  font-size: var(--text-xs);
   color: var(--text-muted);
 }
 
@@ -168,15 +160,15 @@
 .dash-alerts {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 .dash-alert {
   display: flex;
   gap: 10px;
-  padding: 12px;
+  padding: var(--space-3);
   border-radius: var(--radius-md);
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
 }
 
 .dash-alert strong {
@@ -186,7 +178,7 @@
 }
 
 .dash-alert p {
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
 }
 
@@ -197,43 +189,12 @@
 
 .dash-alert--warning {
   background: var(--amber-bg);
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border: 1px solid var(--amber-border);
 }
 
 .dash-alert--info {
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
-}
-
-/* Plan status reuse */
-.plan-status {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-
-.plan-status--complete {
-  background: var(--green-bg);
-  color: var(--green);
-}
-
-.plan-status--in-progress {
-  background: var(--accent-bg);
-  color: var(--accent);
-}
-
-.plan-status--not-started {
-  background: rgba(100, 116, 139, 0.1);
-  color: var(--text-muted);
-}
-
-.plan-status--blocked {
-  background: var(--red-bg);
-  color: var(--red);
 }
 
 @media (max-width: 900px) {

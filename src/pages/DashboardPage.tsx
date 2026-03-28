@@ -44,7 +44,7 @@ export default function DashboardPage() {
   const maxVelocity = Math.max(...velocityData.map((d) => d.modules), 1)
 
   return (
-    <div className="container dash-page">
+    <div className="dash-page">
       <div className="page-header">
         <h1>Progress Dashboard</h1>
         <p>Real-time tracking of migration progress across all modules and phases.</p>

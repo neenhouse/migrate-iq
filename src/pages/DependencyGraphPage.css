@@ -1,37 +1,29 @@
 /* ── Dependency Graph Page ── */
 
-.dep-page .page-header {
-  margin-bottom: 24px;
-}
-
-.dep-page .page-header h1 {
-  margin-bottom: 8px;
-}
-
 /* Toolbar */
 .dep-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .dep-filters {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
 }
 
 .dep-filter-label {
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
   color: var(--text-muted);
 }
 
 .dep-filter-btn {
   padding: 6px 14px;
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
 }
 
 .dep-filter-btn--active {
@@ -42,8 +34,8 @@
 
 .dep-legend {
   display: flex;
-  gap: 16px;
-  font-size: 0.75rem;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
   color: var(--text-muted);
 }
 
@@ -63,14 +55,14 @@
 .dep-layout {
   display: grid;
   grid-template-columns: 1fr 320px;
-  gap: 20px;
+  gap: var(--space-5);
   align-items: start;
 }
 
 /* Graph */
 .dep-graph {
   overflow: auto;
-  padding: 16px;
+  padding: var(--space-4);
 }
 
 .dep-svg {
@@ -80,7 +72,7 @@
 }
 
 .dep-node rect {
-  transition: fill 0.2s, stroke 0.2s;
+  transition: fill var(--transition-base), stroke var(--transition-base);
 }
 
 .dep-node:hover rect {
@@ -90,11 +82,11 @@
 /* Detail panel */
 .dep-detail {
   position: sticky;
-  top: 80px;
+  top: 76px;
 }
 
 .dep-detail h3 {
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
   word-break: break-all;
 }
 
@@ -102,48 +94,48 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 .dep-detail__type-label {
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
   text-transform: capitalize;
 }
 
 .dep-detail__score {
   text-align: center;
-  padding: 20px;
+  padding: var(--space-5);
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 .dep-detail__score-num {
-  font-size: 2.5rem;
+  font-size: var(--text-4xl);
   font-weight: 800;
   line-height: 1;
 }
 
 .dep-detail__score-label {
-  font-size: 0.75rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: var(--space-1);
 }
 
 .dep-detail__grid {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
 }
 
 .dep-detail__row {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: var(--space-2) 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
 }
 
 .dep-detail__row-label {
@@ -156,8 +148,8 @@
 }
 
 .dep-detail__deps h4 {
-  font-size: 0.875rem;
-  margin-bottom: 8px;
+  font-size: var(--text-md);
+  margin-bottom: var(--space-2);
   color: var(--text-secondary);
 }
 
@@ -168,21 +160,21 @@
 }
 
 .dep-detail__tag {
-  padding: 4px 10px;
+  padding: var(--space-1) 10px;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 
 .dep-detail__empty {
   text-align: center;
-  padding: 48px 16px;
+  padding: var(--space-12) var(--space-4);
 }
 
 .dep-detail__empty p {
-  font-size: 0.875rem;
+  font-size: var(--text-md);
   color: var(--text-muted);
 }
 

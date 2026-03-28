@@ -6,20 +6,36 @@
   min-height: 100vh;
 }
 
+.layout__body {
+  display: flex;
+  flex: 1;
+}
+
 .layout__main {
   flex: 1;
-  padding: 40px 0;
+  padding: var(--space-10) 0;
+  min-width: 0;
+}
+
+.layout__main--dashboard {
+  padding: var(--space-8) var(--space-8);
+  max-width: 1100px;
 }
 
 .layout__footer {
   border-top: 1px solid var(--border);
-  padding: 24px 0;
+  padding: var(--space-6) 0;
   text-align: center;
 }
 
 .layout__footer p {
-  font-size: 0.8125rem;
+  font-size: var(--text-base);
   color: var(--text-muted);
+}
+
+/* Dashboard layout: sidebar + content */
+.layout--dashboard .layout__footer {
+  margin-left: 240px;
 }
 
 /* ── Topbar ── */
@@ -27,17 +43,20 @@
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(10, 14, 23, 0.85);
+  z-index: var(--z-sticky);
+  background: rgba(10, 10, 15, 0.88);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
 
 .topbar__inner {
   display: flex;
   align-items: center;
-  gap: 32px;
-  height: 60px;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 var(--space-6);
+  max-width: 100%;
 }
 
 .topbar__brand {
@@ -53,8 +72,6 @@
   height: 32px;
   background: var(--accent);
   color: var(--bg-primary);
-  font-weight: 800;
-  font-size: 1.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,63 +80,145 @@
 
 .topbar__name {
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .topbar__nav {
   display: flex;
   align-items: center;
-  gap: 4px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.topbar__nav::-webkit-scrollbar {
-  display: none;
+  gap: var(--space-2);
 }
 
 .topbar__link {
   padding: 6px 14px;
   border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
+  font-size: var(--text-md);
   font-weight: 500;
   color: var(--text-muted);
   text-decoration: none;
   white-space: nowrap;
-  transition: color 0.2s, background 0.2s;
+  transition: color var(--transition-base), background var(--transition-base);
 }
 
 .topbar__link:hover {
   color: var(--text-secondary);
+}
+
+.topbar__cta {
+  margin-left: var(--space-3);
+  padding: 8px 20px;
+  font-size: var(--text-md);
+}
+
+.topbar__project {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.topbar__project-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.topbar__project-name {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* ── Sidebar ── */
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  background: var(--bg-secondary);
+  padding: var(--space-4) var(--space-3);
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.sidebar__link:hover {
+  color: var(--text-secondary);
   background: var(--bg-card);
 }
 
-.topbar__link--active {
+.sidebar__link--active {
   color: var(--accent) !important;
   background: var(--accent-bg) !important;
 }
 
-@media (max-width: 768px) {
-  .topbar__inner {
-    gap: 16px;
-    padding: 0 12px;
-  }
+.sidebar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
 
-  .topbar__name {
+.sidebar__label {
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .sidebar {
     display: none;
   }
 
+  .layout--dashboard .layout__footer {
+    margin-left: 0;
+  }
+
+  .layout__main--dashboard {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  /* Show mobile nav in topbar */
+  .topbar__inner {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
   .topbar__nav {
-    gap: 2px;
+    gap: var(--space-1);
   }
 
   .topbar__link {
+    font-size: var(--text-sm);
     padding: 6px 10px;
-    font-size: 0.75rem;
   }
 
   .layout__main {
-    padding: 24px 0;
+    padding: var(--space-6) 0;
   }
 }

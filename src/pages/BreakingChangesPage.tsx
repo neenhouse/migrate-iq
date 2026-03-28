@@ -23,7 +23,7 @@ export default function BreakingChangesPage() {
   }), [])
 
   return (
-    <div className="container bc-page">
+    <div className="bc-page">
       <div className="page-header">
         <h1>Breaking Change Detector</h1>
         <p>All breaking changes detected in the codebase, categorized by severity.</p>

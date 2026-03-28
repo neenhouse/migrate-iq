@@ -43,7 +43,7 @@ export default function RollbackPage() {
   }
 
   return (
-    <div className="container rb-page">
+    <div className="rb-page">
       <div className="page-header">
         <h1>Rollback Planning</h1>
         <p>Pre-tested rollback steps for every migration phase. Check off steps as you execute them.</p>

@@ -63,7 +63,7 @@ export default function DependencyGraphPage() {
   )
 
   return (
-    <div className="container dep-page">
+    <div className="dep-page">
       <div className="page-header">
         <h1>Dependency Graph</h1>
         <p>Interactive dependency map with risk scoring per node.</p>

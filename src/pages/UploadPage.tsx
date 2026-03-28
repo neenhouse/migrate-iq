@@ -30,7 +30,7 @@ export default function UploadPage() {
   }
 
   return (
-    <div className="container upload-page">
+    <div className="upload-page">
       <div className="page-header">
         <h1>Repo Analysis</h1>
         <p>Paste your package.json, file tree, or any dependency manifest to get started.</p>

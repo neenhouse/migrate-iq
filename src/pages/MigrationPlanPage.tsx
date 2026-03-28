@@ -32,7 +32,7 @@ export default function MigrationPlanPage() {
   }
 
   return (
-    <div className="container plan-page">
+    <div className="plan-page">
       <div className="page-header">
         <h1>Migration Plan</h1>
         <p>Phase-by-phase migration plan with per-module effort estimation.</p>

@@ -3,37 +3,65 @@ import './LandingPage.css'
 
 const features = [
   {
-    icon: 'upload',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
+      </svg>
+    ),
     title: 'Repo Analysis',
     desc: 'Upload your codebase and get an instant breakdown of languages, frameworks, and dependencies.',
   },
   {
-    icon: 'graph',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="18" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" /><path d="M6 9v6c0 1.66 1.34 3 3 3h3" /><line x1="18" y1="9" x2="18" y2="12" />
+      </svg>
+    ),
     title: 'Dependency Graph',
     desc: 'Interactive SVG visualization with risk scores. Red means danger, green means safe.',
   },
   {
-    icon: 'alert',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
+      </svg>
+    ),
     title: 'Breaking Changes',
     desc: 'Detect every API incompatibility, deprecation, and behavioral change before you start.',
   },
   {
-    icon: 'plan',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" />
+      </svg>
+    ),
     title: 'Migration Plan',
     desc: 'Phase-by-phase plan with effort estimates, critical path, and parallelization hints.',
   },
   {
-    icon: 'code',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
     title: 'Script Templates',
     desc: 'Auto-generated codemods for jQuery to React, REST to GraphQL, and more.',
   },
   {
-    icon: 'dashboard',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" />
+      </svg>
+    ),
     title: 'Progress Tracking',
     desc: 'Real-time dashboard showing module-level progress, velocity, and regressions.',
   },
   {
-    icon: 'rollback',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="1 4 1 10 7 10" /><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+      </svg>
+    ),
     title: 'Rollback Planning',
     desc: 'Every migration step has a tested rollback plan. Revert safely, any time.',
   },
@@ -45,16 +73,6 @@ const stats = [
   { value: '70%', label: 'Auto-fixable changes' },
   { value: '< 2min', label: 'Analysis time' },
 ]
-
-const iconMap: Record<string, string> = {
-  upload: '\u2B06',
-  graph: '\u2B21',
-  alert: '\u26A0',
-  plan: '\u2630',
-  code: '\u2328',
-  dashboard: '\u2B24',
-  rollback: '\u21BA',
-}
 
 export default function LandingPage() {
   return (
@@ -97,7 +115,7 @@ export default function LandingPage() {
       </section>
 
       {/* Problem/Solution */}
-      <section className="problem-solution">
+      <section className="problem-solution" id="how-it-works">
         <div className="container">
           <h2 className="section-title">Why migrations fail</h2>
           <p className="section-subtitle">
@@ -129,13 +147,13 @@ export default function LandingPage() {
       </section>
 
       {/* Features */}
-      <section className="features">
+      <section className="features" id="features">
         <div className="container">
           <h2 className="section-title">Everything you need for a safe migration</h2>
           <div className="features__grid">
             {features.map((f) => (
               <div key={f.title} className="feature-card card">
-                <div className="feature-card__icon">{iconMap[f.icon]}</div>
+                <div className="feature-card__icon">{f.icon}</div>
                 <h3>{f.title}</h3>
                 <p>{f.desc}</p>
               </div>

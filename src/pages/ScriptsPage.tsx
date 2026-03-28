@@ -7,7 +7,7 @@ export default function ScriptsPage() {
   const active = scriptTemplates.find((t) => t.id === activeId) ?? scriptTemplates[0]
 
   return (
-    <div className="container scripts-page">
+    <div className="scripts-page">
       <div className="page-header">
         <h1>Migration Script Templates</h1>
         <p>Auto-generated codemods for common migration patterns. Review before/after code and manual steps.</p>
