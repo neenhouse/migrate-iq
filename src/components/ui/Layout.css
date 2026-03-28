@@ -1,0 +1,125 @@
+/* ── Layout ── */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout__main {
+  flex: 1;
+  padding: 40px 0;
+}
+
+.layout__footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.layout__footer p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* ── Topbar ── */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 60px;
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.topbar__logo {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 800;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.topbar__name {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.topbar__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.topbar__link {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+.topbar__link:hover {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+}
+
+.topbar__link--active {
+  color: var(--accent) !important;
+  background: var(--accent-bg) !important;
+}
+
+@media (max-width: 768px) {
+  .topbar__inner {
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .topbar__name {
+    display: none;
+  }
+
+  .topbar__nav {
+    gap: 2px;
+  }
+
+  .topbar__link {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .layout__main {
+    padding: 24px 0;
+  }
+}
