@@ -57,6 +57,7 @@ export default function Layout() {
 
   return (
     <div className={`layout ${isDashboard ? 'layout--dashboard' : ''}`}>
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       {/* Top bar */}
       <header className="topbar">
         <div className="topbar__inner">
@@ -110,7 +111,7 @@ export default function Layout() {
           </aside>
         )}
 
-        <main className={`layout__main ${isDashboard ? 'layout__main--dashboard' : ''}`}>
+        <main id="main-content" className={`layout__main ${isDashboard ? 'layout__main--dashboard' : ''}`}>
           <Outlet />
         </main>
       </div>
