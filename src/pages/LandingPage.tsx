@@ -79,6 +79,9 @@ export default function LandingPage() {
     <div className="landing">
       {/* Hero */}
       <section className="hero">
+        <div className="hero__bg-bleed" aria-hidden="true">
+          <img src="/hero-og.webp" alt="" loading="eager" />
+        </div>
         <div className="container hero__inner">
           <div className="hero__badge">Legacy Migration Intelligence</div>
           <h1 className="hero__title">
