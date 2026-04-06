@@ -70,12 +70,13 @@
 .topbar__logo {
   width: 32px;
   height: 32px;
-  background: var(--accent);
-  color: var(--bg-primary);
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 60%, var(--accent-light) 100%);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
 }
 
 .topbar__name {
@@ -103,7 +104,8 @@
 }
 
 .topbar__link:hover {
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .topbar__cta {
@@ -155,23 +157,37 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: 10px var(--space-3);
+  padding: 9px var(--space-3);
   border-radius: var(--radius-md);
   font-size: var(--text-md);
   font-weight: 500;
   color: var(--text-muted);
   text-decoration: none;
   transition: all var(--transition-fast);
+  position: relative;
 }
 
 .sidebar__link:hover {
-  color: var(--text-secondary);
-  background: var(--bg-card);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .sidebar__link--active {
   color: var(--accent) !important;
   background: var(--accent-bg) !important;
+  font-weight: 600 !important;
+}
+
+.sidebar__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
 }
 
 .sidebar__icon {
